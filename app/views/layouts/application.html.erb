@@ -12,6 +12,8 @@
 </header>
 <nav>
 	<%= link_to "New User Sign-up", new_user_path %>
+  <%= link_to "Home", user_path %>
+  <%= link_to "Logout", session_path, method: :delete %>
 	
 </nav>
 <%= yield %>
