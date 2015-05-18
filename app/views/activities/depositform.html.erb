@@ -2,15 +2,15 @@
 <h1>Make a Deposit</h1>
 <form class="pure-form pure-form-stacked" action="/activities" method="POST">
 <fieldset>
-  <label for="deposit">Deposit Type: </label>
-  <select for="deposit">
-    <option>check</option>
-    <option>cash</option>
+  <label for="type">Deposit Type: </label>
+  <select for="type">
+    <option value="check">check</option>
+    <option value="cash">cash</option>
   </select>
-  <label for="description">Description: </label>
-  <input name="description" type="text">
-  <label for="amount">Amount: </label>
-  <input name="amount" type="text">
+  <label for="desc">Description: </label>
+  <input name="desc" type="text">
+  <label for="deposit">Amount: </label>
+  <input name="deposit" type="text">
 
   <button class="pure-button pure-button-primary">Deposit</button>
   </fieldset>
