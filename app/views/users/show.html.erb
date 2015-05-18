@@ -1,0 +1,8 @@
+<h2>What would you like to do today?</h2>
+<%= @user.balance %>
+<ul>
+	<li><%= link_to "Edit Payees", edit_payees_path %></li>
+	<li><%= link_to "See Activity", activities_path %></li>
+	<li><%= link_to "Make a Deposit", activities_deposit_path %></li>
+	<li><%= link_to "Make a Payment", activities_payment_path %></li>
+</ul>

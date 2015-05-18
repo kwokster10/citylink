@@ -3,8 +3,11 @@ Rails.application.routes.draw do
   root 'sessions#new'
 
   resource :session, only: [:new, :create, :destroy]
-
   resource :user
+  resource :activites
+  post 'activites/deposit' => 'activities#create'
+  post 'activites/payment' => 'activities#create'
+  resource :payees
  
 
   # The priority is based upon order of creation: first created -> highest priority.
