@@ -15,11 +15,11 @@ class UsersController < ApplicationController
   end
 
   def show
-    if !params[:user_id]
+    if !session[:user_id]
       redirect_to new_session_path
       return
     end
-
+    @user = User.find(session[:user_id])
 
   end
 
