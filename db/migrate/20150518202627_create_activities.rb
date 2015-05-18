@@ -3,7 +3,7 @@ class CreateActivities < ActiveRecord::Migration
     create_table :activities do |t|
       t.text :desc
       t.text :type
-      t.real :amount
+      t.decimal :amount
 
       t.timestamps null: false
     end
