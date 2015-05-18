@@ -4,7 +4,9 @@ Rails.application.routes.draw do
 
   resource :session, only: [:new, :create, :destroy]
   resource :user
-  resource :activites
+  resource :activities
+  get 'activities/deposit' => 'activities#depositform'
+  get 'activities/payment' => 'activities#paymentform'
   post 'activites/deposit' => 'activities#create'
   post 'activites/payment' => 'activities#create'
   resource :payees

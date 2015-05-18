@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
 
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to 'user#show'
+      redirect_to user_path
     else
       @email = params[:email]
       @error = "Unknown password/user"
