@@ -1,17 +1,32 @@
+
+
 class UsersController < ApplicationController
   def create
-    if params[:password] != params[:password_confirm]
-      erb :new, locals: {user: params, error: "Passwords don't match"}
+    if params[:password] != params[:confirm_password]
+      @name = params[:name]
+      @email = params[:email]
+      @error = "Passwords don't match"
+      render :new
       return
     end
-    user = User.create(user_params);
-    redirect_to 'sessions#new'
+    user = User.create(name: params[:name],email: params[:email], password: params[:password])
+    session[:user_id] = user.id
+    redirect_to user_path
   end
 
-  private
-    def user_login
-      params.require(:user).permit(:name,:email,:password_digest);
+  def show
+    if !params[:user_id]
+      redirect_to new_session_path
+      return
     end
+
+
+  end
+
+  # private
+  #   def user_login
+  #     params.require(:user).permit(:name,:email,:password_digest);
+  #   end
 end
 
 
