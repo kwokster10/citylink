@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   end
 
   private
-    def user_params
+    def user_login
       params.require(:user).permit(:name,:email,:password_digest);
     end
 end
