@@ -3,6 +3,7 @@ class SessionController < ApplicationController
   end
 
   def 'new'
+  	render :new
   end
 
   def 'destroy'
