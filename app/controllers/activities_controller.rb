@@ -5,6 +5,7 @@ class ActivitiesController < ApplicationController
 
   def paymentform
   end
+  
   def depositform
   end
 end

@@ -1,17 +1,18 @@
 <div class="sign-form">
-<h1>Payment </h1>
-<form class="pure-form pure-form-stacked" action="/user" method="POST">
+<h1>Make a Payment</h1>
+<form class="pure-form pure-form-stacked" action="/activities" method="POST">
 <fieldset>
-<label for="name">Username: </label>
-  <input name="name" type="text">
-  <label for="email">Email: </label>
-  <input name="email" type = "text">
-  <label for="password">Password</label>
-  <input name="password" type = "password">
-  <label for="confirm-password">Confirm Password</label>
-  <input name="confirm_password" type="password">
-  <input name="authenticity_token" value="<%= form_authenticity_token() %>" type = "hidden">
-  <button class="pure-button pure-button-primary">Sign Up</button>
+  <select>
+    <% @payees.each do |payee| %>
+    <option><%= payee.name %></option>
+    <% end %>
+  </select>
+  <label for="description">Description: </label>
+  <input name="description" type="text">
+  <label for="amount">Amount</label>
+  <input name="amount" type="text">
+
+  <button class="pure-button pure-button-primary">Pay</button>
   </fieldset>
 </form> 
 </div>
