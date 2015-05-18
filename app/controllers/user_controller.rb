@@ -1,5 +1,5 @@
 class UserController < ApplicationController
-  def 'create'
+  def create
   end
 end
 

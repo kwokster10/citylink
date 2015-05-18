@@ -1,11 +1,11 @@
 class SessionController < ApplicationController
-  def 'create'
+  def create
   end
 
-  def 'new'
+  def new
   end
 
-  def 'destroy'
+  def destroy
   end
 end
 
