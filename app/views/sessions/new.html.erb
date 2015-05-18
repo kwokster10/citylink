@@ -1,16 +1,14 @@
 <% if @error %>
   <h3 style = "color: red"><%= @error %></h3>
 <% end %>
-<h1>Sign Up: </h1>
-<form class="pure-form pure-form-stacked" action="/user" method="POST">
+<h1>Sign In: </h1>
+<form class="pure-form pure-form-stacked" action="/session" method="POST">
 <fieldset>
-<label for="username">Username: </label>
-  <input name="username" type="text">
   <label for="email">Email: </label>
-  <input name="email" type = "text">
+  <input name="email" type="text">
   <label for="password">Password</label>
-  <input name="password" type = "password">
+  <input name="password" type="password">
   <input name="authenticity_token" value="<%= form_authenticity_token() %>" type = "hidden">
-  <button class="pure-button pure-button-primary">Sign Up</button>
+  <button class="pure-button pure-button-primary">Sign In</button>
   </fieldset>
-</form> 
+</form>

@@ -1,14 +1,10 @@
-class SessionController < ApplicationController
-  def 'create'
-  end
-
-  def 'new'
-  	render :new
-  end
-
-  def 'destroy'
+class UsersController < ApplicationController
+  def create
+    render plain: params.inspect
   end
 end
+
+
 
 # Evans-MacBook-Pro:citylink sleepylemur$ rake routes
 #      Prefix Verb   URI Pattern            Controller#Action
