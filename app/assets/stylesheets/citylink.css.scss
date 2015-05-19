@@ -18,6 +18,17 @@ nav {
 	margin-left: 20%;
 }
 .activity-table th, .activity-table td {
-	padding-right: 30px;
-	padding-left: 30px;
+  padding: 10px 30px;
+}
+.activity-table tr {
+  border-top: 1px solid black;
+}
+.activity-table thead tr:first-child {
+  border-top: none;
+}
+.alignright {
+  text-align: right;
+}
+.debt {
+  color: red;
 }
