@@ -18,11 +18,23 @@ nav {
 	margin-left: 20%;
 }
 .activity-table th, .activity-table td {
-	padding-right: 30px;
-	padding-left: 30px;
+  padding: 10px 30px;
+}
+.activity-table tr {
+  border-top: 1px solid black;
+}
+.activity-table thead tr:first-child {
+  border-top: none;
+}
+.alignright {
+  text-align: right;
+}
+.debt {
+  color: red;
 }
 .pure-button-primary {
-	color: lightblue;
+	background: rgb(66, 184, 221);
+	color: white;
 }
 .pure-button-secondary {
 	font-size: 30px;
@@ -31,3 +43,4 @@ nav {
     text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
     background: rgb(66, 184, 221);
 }
+

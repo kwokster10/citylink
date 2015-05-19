@@ -8,12 +8,14 @@
 </tr>
 </thead>
 <tbody>
+<% sum = 0 %>
 <% @activities.each do |activity| %>
 	<tr>
 	  <td><%= activity.created_at.strftime("%m/%d/%Y") %></td>
     <td><%= activity.kind %></td>
     <td><%= activity.desc %></td>
-    <td>$<%= activity.amount %></td>
+    <td class="alignright <%= "debt" if activity.amount < 0 %>"><%= "$%.2f" % activity.amount %></td>
+    <% sum += activity.amount %>
   </tr>
 <% end %>
 </tbody>
@@ -22,7 +24,7 @@
     <td></td>
     <td></td>
     <td>Balance:</td>
-    <td>One Billion $$</td>
+    <td class="alignright"><%= "$%.2f" % sum %></td>
   </tr>
 </tfoot>
 </table>

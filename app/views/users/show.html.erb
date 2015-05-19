@@ -1,6 +1,6 @@
 <div class="centered-form">
 <h2>What would you like to do today?</h2>
-Current balance: <%= Money.us_dollar(@user.balance*100).format %>
+Current balance: <%= "$%.2f" % @user.balance %>
 <ul>
 	<li><%= link_to "Add a Payee", new_payees_path, {class: "pure-button pure-button-secondary"} %></li>
 	<li><%= link_to "See All Payees", payees_path, {class: "pure-button pure-button-secondary"} %></li>
