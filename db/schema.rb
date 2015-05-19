@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 20150518203140) do
     t.text     "desc"
     t.text     "type"
     t.decimal  "amount"
+    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -24,6 +25,7 @@ ActiveRecord::Schema.define(version: 20150518203140) do
   create_table "payees", force: :cascade do |t|
     t.text     "name"
     t.text     "email"
+    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

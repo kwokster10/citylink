@@ -1,25 +1,25 @@
 class ActivitiesController < ApplicationController
   def show
-    @activites = Activity.where(user_id: session[:user_id])
+    @activities = Activity.where(user_id: session[:user_id])
   end
 
   def paymentform
-  	@activites = User.find(session[:user_id]).activites
+  	@activities = User.find(session[:user_id]).activities
   	@payee = Payee.all
   end
   
   def depositform
-  	@activites = User.find(session[:user_id]).activites
+  	@activities = User.find(session[:user_id]).activities
   end
 
   def create 
   	if params[:deposit]
-  		@activity = Activity.create(:desc: params[:desc], type: params[:type], amount: params[:deposit])
+  		@activity = Activity.create(desc: params[:desc], type: params[:type], amount: params[:deposit])
   	else
   		amount = -params[:payment].to_i
-  		@activity = Activity.create(:desc: params[:desc], type: params[:type], amount: amount)
+  		@activity = Activity.create(desc: params[:desc], type: params[:type], amount: amount)
   	end
-  	redirect_to activites_path
+  	redirect_to activities_path
   end
 
   # private 

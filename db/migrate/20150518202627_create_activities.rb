@@ -4,6 +4,7 @@ class CreateActivities < ActiveRecord::Migration
       t.text :desc
       t.text :type
       t.decimal :amount
+      t.integer :user_id
 
       t.timestamps null: false
     end
