@@ -11,6 +11,7 @@
   <input name="desc" type="text">
   <label for="deposit">Amount: </label>
   <input name="deposit" type="text">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token() %>">
 
   <button class="pure-button pure-button-primary">Deposit</button>
   </fieldset>
