@@ -15,9 +15,10 @@ input {
   display: inline-block;
 }
 .centered-form {
+  // text-align: center;
   // background: blue;
   width: 80%;
-  max-width: 200px;
+  max-width: 400px;
   margin: auto;
 }
 .activity-table {
@@ -38,15 +39,34 @@ input {
 .debt {
   color: red;
 }
-.pure-button-primary {
-	background: rgb(66, 184, 221);
-	color: white;
+a {
+  text-decoration: none;
+  color: rgb(66, 184, 221);
+  transition: color .3s;
 }
-.pure-button-secondary {
-	font-size: 30px;
-    color: white;
-    border-radius: 4px;
-    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-    background: rgb(66, 184, 221);
+a:hover {
+  color: lightblue;
+  transition: color .1s;
 }
+ul.happybuttons {
+  list-style: none;
+  li {
+    margin: 15px 0px;
+  }
+}
+nav a {
+  display: inline-block;
+  margin: 5px 20px;
+}
+// .pure-button-primary {
+// 	background: rgb(66, 184, 221);
+// 	color: white;
+// }
+// .pure-button-secondary {
+// 	font-size: 30px;
+//     color: white;
+//     border-radius: 4px;
+//     text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+//     background: rgb(66, 184, 221);
+// }
 

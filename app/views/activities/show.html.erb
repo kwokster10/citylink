@@ -24,7 +24,7 @@
     <td></td>
     <td></td>
     <td>Balance:</td>
-    <td class="alignright"><%= "$%.2f" % sum %></td>
+    <td class="alignright <%= "debt" if sum < 0 %>"><%= "$%.2f" % sum %></td>
   </tr>
 </tfoot>
 </table>

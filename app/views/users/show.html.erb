@@ -1,11 +1,11 @@
 <div class="centered-form">
 <h2>What would you like to do today?</h2>
 Current balance: <%= "$%.2f" % @user.balance %>
-<ul>
-	<li><%= link_to "Add a Payee", new_payees_path, {class: "pure-button pure-button-secondary"} %></li>
-	<li><%= link_to "See All Payees", payees_path, {class: "pure-button pure-button-secondary"} %></li>
-	<li><%= link_to "See Activity", activities_path, {class: "pure-button pure-button-secondary"} %></li>
-	<li><%= link_to "Make a Deposit", activities_deposit_path, {class: "pure-button pure-button-secondary"} %></li>
-	<li><%= link_to "Make a Payment", activities_payment_path, {class: "pure-button pure-button-secondary"} %></li>
+<ul class='happybuttons'>
+	<li><%= link_to "Add a Payee", new_payees_path %></li>
+	<li><%= link_to "See All Payees", payees_path %></li>
+	<li><%= link_to "See Activity", activities_path %></li>
+	<li><%= link_to "Make a Deposit", activities_deposit_path %></li>
+	<li><%= link_to "Make a Payment", activities_payment_path %></li>
 </ul>
 </div>

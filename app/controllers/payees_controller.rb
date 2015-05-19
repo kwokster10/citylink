@@ -13,25 +13,20 @@ class PayeesController < ApplicationController
   	redirect_to activities_payment_path
   end
 
-  def edit 
-  	@payee = Payee.find(params[:id])
+  def edit
+  	@payee = Payee.find(params[:format])
   end
 
   def update
   	@payee = Payee.find(params[:id])
-  	@payee.update(payee_params)
-  	redirect_to activities_path
+  	@payee.update(name: params[:name], email: params[:email])
+  	redirect_to payees_path
   end
 
   def destroy 
-  	@payee = Payee.find(params[:id])
+  	@payee = Payee.find(params[:format])
   	@payee.destroy
-  	redirect_to activities_path
-  end
-
-  private 
-  def payee_params
-  	params.require(:payee).permit(:name, :email)
+  	redirect_to payees_path
   end
 end
 
