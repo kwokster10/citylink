@@ -14,10 +14,10 @@ class ActivitiesController < ApplicationController
 
   def create 
   	if params[:deposit]
-  		@activity = Activity.create(desc: params[:desc], type: params[:type], amount: params[:deposit])
+  		@activity = Activity.create(desc: params[:desc], type: params[:type], amount: params[:deposit], user_id: session[:user_id])
   	else
   		amount = -params[:payment].to_i
-  		@activity = Activity.create(desc: params[:desc], type: params[:type], amount: amount)
+  		@activity = Activity.create(desc: params[:desc], type: params[:type], amount: amount, user_id: session[:user_id])
   	end
   	redirect_to activities_path
   end
