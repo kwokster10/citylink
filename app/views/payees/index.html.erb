@@ -1,0 +1,4 @@
+<h1>All Payees</h1>
+	<% @payees.each do |payee| %>
+	<li><%= link_to payee.name, payee %></li>
+<% end %>
