@@ -1,4 +1,9 @@
+<div class="centered-form">
 <h1>All Payees</h1>
 	<% @payees.each do |payee| %>
-	<li><%= link_to payee.name, payee %></li>
+	<li><%= payee.name %> <%= payee.email %>
+	<%= link_to "edit", edit_payees_path(payee.id) %>
+	<%= link_to "delete", payee, method: :delete %>
+	</li>
 <% end %>
+</div>
