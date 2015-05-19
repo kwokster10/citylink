@@ -4,12 +4,12 @@ class ActivitiesController < ApplicationController
   end
 
   def paymentform
-  	@activites = User.find(session[:user_id]).activites
+  	@activites = User.find(session[:user_id]).activities
   	@payee = Payee.all
   end
   
   def depositform
-  	@activites = User.find(session[:user_id]).activites
+  	@activites = User.find(session[:user_id]).activities
   end
 
   def create 
