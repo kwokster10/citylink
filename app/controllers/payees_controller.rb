@@ -13,7 +13,7 @@ class PayeesController < ApplicationController
       redirect_to activities_payment_path
     else 
       flash[:error] = "Please fill out all input fields."
-      redirect_to activities_path
+      redirect_to new_payees_path
     end
   end
 
