@@ -28,7 +28,7 @@ class ActivitiesController < ApplicationController
       redirect_to activities_path
     else 
       flash[:error] = "Hmm, please check your inputs."
-      redirect_to activities_path
+      redirect_to activities_payment_path
     end
   end
 
