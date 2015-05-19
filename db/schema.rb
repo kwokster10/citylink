@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 20150518203140) do
 
   create_table "activities", force: :cascade do |t|
     t.text     "desc"
-    t.text     "type"
+    t.text     "kind"
     t.decimal  "amount"
     t.integer  "user_id"
     t.datetime "created_at", null: false

@@ -14,11 +14,14 @@ class ActivitiesController < ApplicationController
 
   def create 
   	if params[:deposit]
-  		@activity = Activity.create(desc: params[:desc], type: params[:type], amount: params[:deposit], user_id: session[:user_id])
+      amount = params[:deposit].to_f
+  		@activity = Activity.create(desc: params[:desc], kind: params[:kind], amount: params[:deposit], user_id: session[:user_id])
   	else
-  		amount = -params[:payment].to_i
-  		@activity = Activity.create(desc: params[:desc], type: params[:type], amount: amount, user_id: session[:user_id])
+  		amount = -params[:payment].to_f
+  		@activity = Activity.create(desc: params[:desc], kind: params[:kind], amount: amount, user_id: session[:user_id])
   	end
+    user = User.find(session[:user_id]);
+    user.update(balance: user.balance+amount);
   	redirect_to activities_path
   end
 
