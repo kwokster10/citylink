@@ -10,8 +10,8 @@
 <tbody>
 <% @activities.each do |activity| %>
 	<tr>
-	<td><%= activity.created_at %></td>
-    <td><%= activity.type %></td>
+	  <td><%= activity.created_at.strftime("%m/%d/%Y") %></td>
+    <td><%= activity.kind %></td>
     <td><%= activity.desc %></td>
     <td>$<%= activity.amount %></td>
   </tr>

@@ -4,7 +4,7 @@
 <form class="pure-form pure-form-stacked" action="/activities" method="POST">
 <fieldset>
   <label for="type">Payee: </label>
-  <select name="type">
+  <select name="kind">
     <% @payees.each do |payee| %>
     <option><%= payee.name %></option>
     <% end %>

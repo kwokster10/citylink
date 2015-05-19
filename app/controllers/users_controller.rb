@@ -1,6 +1,7 @@
 
 
 class UsersController < ApplicationController
+  skip_before_action :authenticate, only: [:new, :create]
   def create
     if params[:password] != params[:confirm_password]
       @name = params[:name]
@@ -15,12 +16,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    if !session[:user_id]
-      redirect_to new_session_path
-      return
-    end
     @user = User.find(session[:user_id])
-
   end
 
   # private

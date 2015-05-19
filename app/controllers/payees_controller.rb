@@ -33,7 +33,6 @@ class PayeesController < ApplicationController
   def payee_params
   	params.require(:user).permit(:name, :email)
   end
-
 end
 
        #      payees POST   /payees(.:format)             payees#create
