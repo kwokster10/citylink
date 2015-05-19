@@ -1,6 +1,6 @@
 class ActivitiesController < ApplicationController
   def show
-    @activities = Activity.where(user_id: session[:user_id])
+    @activities = Activity.where({user_id: session[:user_id]})
   end
 
   def paymentform
