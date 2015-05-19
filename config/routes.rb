@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   root 'sessions#new'
 
   resource :session, only: [:new, :create, :destroy]
-  resource :user
-  resource :activities
+  resource :user, only: [:new, :create, :show]
+  resource :activities, only: [:show, :create]
   get 'activities/deposit' => 'activities#depositform'
   get 'activities/payment' => 'activities#paymentform'
   post 'activites/deposit' => 'activities#create'

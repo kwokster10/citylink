@@ -25,9 +25,4 @@ class ActivitiesController < ApplicationController
   	redirect_to activities_path
   end
 
-  # private 
-  # def activity_params
-  # 	params.require(:activity).permit(:desc, :type, :amount)
-  # end
-
 end

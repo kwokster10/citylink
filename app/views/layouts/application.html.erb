@@ -11,10 +11,16 @@
 	Citylink
 </header>
 <nav>
-	<%= link_to "New User", new_user_path %>
-  <%= link_to "Home", user_path %>
-  <%= link_to "Logout", session_path, method: :delete %>
-	
+  <% if !session[:user_id] %>
+    <%= link_to "New User", new_user_path %>
+    <%= link_to "Sign In", new_session_path %>
+  <% end %>
+  <% if session[:user_id] %>
+	  <%= link_to "Home", user_path %>
+	  <%= link_to "Logout", session_path, method: :delete %>
+  
+      <a style="color: black">Welcome, <%= session[:username] %>!</a>
+  <% end %>
 </nav>
 <%= yield %>
 

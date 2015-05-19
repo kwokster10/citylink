@@ -1,2 +1,19 @@
-<h1 class='centered-form'>Edit Payee: </h1>
-<%= render 'form' %>
+<div class="centered-form">
+<h1>Edit Payee: </h1>
+<% if @error %>
+  <h3 style = "color: red"><%= @error %></h3>
+<% end %>
+
+<form class="pure-form pure-form-stacked" action="/payees" method="POST">
+  <input type="hidden" name="_method" value="PUT">
+  <input type="hidden" name="id" value="<%= @payee.id %>">
+<fieldset>
+<label for="name">Name: </label>
+  <input name="name" type="text" value="<%= @payee.name %>">
+  <label for="email">Email: </label>
+  <input name="email" type = "text" value="<%= @payee.email %>">
+  <input name="authenticity_token" value="<%= form_authenticity_token() %>" type = "hidden">
+  <button class="pure-button pure-button-primary">Submit</button>
+  </fieldset>
+</form> 
+</div>

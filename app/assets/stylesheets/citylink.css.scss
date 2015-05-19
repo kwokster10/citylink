@@ -15,11 +15,9 @@ input {
   display: inline-block;
 }
 .centered-form {
-  // text-align: center;
-  // background: blue;
   width: 80%;
   max-width: 400px;
-  margin: auto;
+  margin-left: 43%;
 }
 .activity-table {
 	margin-left: 20%;
@@ -58,15 +56,7 @@ nav a {
   display: inline-block;
   margin: 5px 20px;
 }
-// .pure-button-primary {
-// 	background: rgb(66, 184, 221);
-// 	color: white;
-// }
-// .pure-button-secondary {
-// 	font-size: 30px;
-//     color: white;
-//     border-radius: 4px;
-//     text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-//     background: rgb(66, 184, 221);
-// }
+h2#user-home {
+	text-align: center;
+}
 
