@@ -11,8 +11,14 @@ nav {
 	margin: 10px 10px 10px 30px;
 	height: 50px;
 }
+input {
+  display: inline-block;
+}
 .centered-form {
-	margin-left: 40%;
+  // background: blue;
+  width: 80%;
+  max-width: 200px;
+  margin: auto;
 }
 .activity-table {
 	margin-left: 20%;
