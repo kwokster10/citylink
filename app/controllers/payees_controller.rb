@@ -1,5 +1,5 @@
 class PayeesController < ApplicationController
-  def index 
+  def show 
   	@payees = Payee.all
   end
 
@@ -7,9 +7,9 @@ class PayeesController < ApplicationController
   end
 
   def create
-  	@payee = Payee.create(payee_params)
-  	@payee[:user_id] = session[:user_id]
-  	@payee.save
+  	@payee = Payee.create(name: params[:name], email: params[:email], user_id: session[:user_id])
+  	# @payee[:user_id] = session[:user_id]
+  	# @payee.save
   	redirect_to activities_payment_path
   end
 
@@ -31,7 +31,7 @@ class PayeesController < ApplicationController
 
   private 
   def payee_params
-  	params.require(:user).permit(:name, :email)
+  	params.require(:payee).permit(:name, :email)
   end
 end
 
