@@ -1,15 +1,23 @@
 class PayeesController < ApplicationController
-  def create
-  end
+
   def new
+
   end
-  def edit
+
+  def create
+  	@payee = Payee.create(payee_params)
+  	redirect_to activities_payment_path
   end
-  def show
+
+  def edit 
   end
+
   def update
   end
-  def destroy
+  
+  private 
+  def payee_params
+  	params.require(:user).permit(:name, :email)
   end
 end
 

@@ -1,0 +1,16 @@
+<div class="centered-form">
+<% if @error %>
+  <h3 style = "color: red"><%= @error %></h3>
+<% end %>
+
+<form class="pure-form pure-form-stacked" action="/payees" method="POST">
+<fieldset>
+<label for="name">Name: </label>
+  <input name="name" type="text">
+  <label for="email">Email: </label>
+  <input name="email" type = "text">
+  <input name="authenticity_token" value="<%= form_authenticity_token() %>" type = "hidden">
+  <button class="pure-button pure-button-primary">Submit</button>
+  </fieldset>
+</form> 
+</div>
