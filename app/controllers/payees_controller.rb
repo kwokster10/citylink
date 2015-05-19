@@ -8,7 +8,13 @@ class PayeesController < ApplicationController
 
   def create
   	@payee = Payee.create(name: params[:name], email: params[:email], user_id: session[:user_id])
-  	redirect_to activities_payment_path
+    if @payee.save
+      flash[:success] = "Payee added!"
+      redirect_to activities_payment_path
+    else 
+      flash[:error] = "Please fill out all input fields."
+      redirect_to activities_path
+    end
   end
 
   def edit

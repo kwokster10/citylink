@@ -20,9 +20,16 @@ class ActivitiesController < ApplicationController
   		amount = -params[:payment].to_f
   		@activity = Activity.create(desc: params[:desc], kind: params[:kind], amount: amount, user_id: session[:user_id])
   	end
-    user = User.find(session[:user_id]);
-    user.update(balance: user.balance+amount);
-  	redirect_to activities_path
+
+    if @activity.save
+      flash[:success] = "Check out your new activity!"
+      user = User.find(session[:user_id]);
+      user.update(balance: user.balance+amount);
+      redirect_to activities_path
+    else 
+      flash[:error] = "Hmm, please check your inputs."
+      redirect_to activities_path
+    end
   end
 
 end

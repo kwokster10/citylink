@@ -6,13 +6,13 @@
 <form class="pure-form pure-form-stacked" action="/user" method="POST">
 <fieldset>
 <label for="name">Username: </label>
-  <input name="name" type="text">
+  <input name="name" type="text" placeholder="4 to 20 characters long">
   <label for="email">Email: </label>
   <input name="email" type="email">
   <label for="password">Password</label>
   <input name="password" type="password">
-  <label for="confirm-password">Confirm Password</label>
-  <input name="confirm_password" type="password">
+  <label for="password_confirmation">Confirm Password</label>
+  <input name="password_confirmation" type="password">
   <input name="authenticity_token" value="<%= form_authenticity_token() %>" type = "hidden">
   <button class="pure-button pure-button-primary">Sign Up</button>
   </fieldset>
